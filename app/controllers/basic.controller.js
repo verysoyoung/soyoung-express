@@ -7,6 +7,6 @@ exports.getBmi = (req, res) => {
   console.log(`키 : ${height}`)
   console.log(`몸무게 : ${weight}`)
   const json = bmi({ name, height, weight }) // service 에 payload
-  console.log(`계산된 JSON 값 : ${JSON.stringify(json)}`)
+  console.log(`결과 값 : ${JSON.stringify(json)}`)
   res.status(200).json(json)
 }

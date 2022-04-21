@@ -17,6 +17,12 @@ const corsOptions = {
 const APP = './app/routes'
 const nodes = ['basic']
 
+app.use(express.json())
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+)
 for (const leaf of nodes) {
   require(`${APP}/${leaf}.route`)({ url: `/api/${leaf}`, app }) // 즉시 실행 app <- express
 }
